@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,55 +17,233 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="quizNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="vUL-lL-3Pt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="vUL-lL-3Pt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s5x-N7-pNi" userLabel="retangulo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5x-N7-pNi" userLabel="retangulo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-mO-2D3">
-                                        <rect key="frame" x="67" y="52" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-mO-2D3">
+                                        <rect key="frame" x="39.5" y="50" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="DpA-AT-hjJ"/>
+                                            <constraint firstAttribute="width" constant="240" id="mV5-ef-fV4"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0U-G0-au9">
-                                        <rect key="frame" x="166" y="198" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0U-G0-au9">
+                                        <rect key="frame" x="140.5" y="198" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.93588978052139282" green="0.92788702249526978" blue="0.59709823131561279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descubra qual a cidade a partir da foto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag2-Ea-pKp">
-                                        <rect key="frame" x="56" y="281" width="263" height="104"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" red="0.93588978050000005" green="0.92788702249999999" blue="0.59709823129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIh-qq-eGR" customClass="BotaoComBorda" customModule="quizNight" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="589" width="359" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.13572123646736145" green="0.23052984476089478" blue="0.2787841260433197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIh-qq-eGR" customClass="BotaoComBorda" customModule="quizNight" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="418.5" width="304" height="53.5"/>
+                                        <color key="backgroundColor" red="0.13572123646736145" green="0.23052984476089478" blue="0.2787841260433197" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="AIh-qq-eGR" secondAttribute="height" multiplier="359:63" id="Anj-me-y7g"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="JOGAR">
-                                            <color key="titleColor" red="0.93588978052139282" green="0.92788702249526978" blue="0.59709823131561279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.95402973209999997" green="0.96347557110000004" blue="0.96347557110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descubra qual a cidade a partir da foto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag2-Ea-pKp">
+                                        <rect key="frame" x="-5.5" y="188" width="331" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="104" id="cRV-iP-btx"/>
+                                            <constraint firstAttribute="width" secondItem="Ag2-Ea-pKp" secondAttribute="height" multiplier="331:104" id="hdM-g7-ouM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="yKg-mO-2D3" firstAttribute="centerX" secondItem="s5x-N7-pNi" secondAttribute="centerX" id="19h-t5-PAV"/>
+                                    <constraint firstAttribute="bottom" secondItem="AIh-qq-eGR" secondAttribute="bottom" constant="8" id="1f0-Pc-HuF"/>
+                                    <constraint firstItem="Q0U-G0-au9" firstAttribute="top" secondItem="yKg-mO-2D3" secondAttribute="bottom" constant="20" id="25V-Al-3Wl"/>
+                                    <constraint firstAttribute="trailing" secondItem="AIh-qq-eGR" secondAttribute="trailing" constant="8" id="Q1G-s6-sbh"/>
+                                    <constraint firstItem="AIh-qq-eGR" firstAttribute="leading" secondItem="s5x-N7-pNi" secondAttribute="leading" constant="8" id="aIT-qt-hh5"/>
+                                    <constraint firstItem="Q0U-G0-au9" firstAttribute="centerX" secondItem="s5x-N7-pNi" secondAttribute="centerX" id="aNF-Ez-b3H"/>
+                                    <constraint firstItem="Ag2-Ea-pKp" firstAttribute="centerX" secondItem="s5x-N7-pNi" secondAttribute="centerX" id="dSY-OR-OPx"/>
+                                    <constraint firstItem="Ag2-Ea-pKp" firstAttribute="centerY" secondItem="s5x-N7-pNi" secondAttribute="centerY" id="ly2-qY-EjN"/>
+                                    <constraint firstItem="yKg-mO-2D3" firstAttribute="top" secondItem="s5x-N7-pNi" secondAttribute="top" constant="50" id="oil-5Q-6Sv"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vUL-lL-3Pt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Yu-bh-mJD"/>
+                            <constraint firstItem="s5x-N7-pNi" firstAttribute="centerY" secondItem="vUL-lL-3Pt" secondAttribute="centerY" id="4MX-NB-r9o"/>
+                            <constraint firstItem="vUL-lL-3Pt" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="CEv-Hj-hSO"/>
+                            <constraint firstItem="vUL-lL-3Pt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K0g-Kj-IPH"/>
+                            <constraint firstItem="s5x-N7-pNi" firstAttribute="width" secondItem="vUL-lL-3Pt" secondAttribute="width" id="Prk-5e-npr"/>
+                            <constraint firstItem="vUL-lL-3Pt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="SXQ-gW-v30"/>
+                            <constraint firstItem="s5x-N7-pNi" firstAttribute="centerX" secondItem="vUL-lL-3Pt" secondAttribute="centerX" id="dvB-Ug-cVn"/>
+                            <constraint firstItem="s5x-N7-pNi" firstAttribute="height" secondItem="vUL-lL-3Pt" secondAttribute="height" id="vLp-AN-av1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imgQNlogo" destination="yKg-mO-2D3" id="wQO-21-IQG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
+            <point key="canvasLocation" x="136.23188405797103" y="131.25"/>
+        </scene>
+        <!--Questoes View Controller-->
+        <scene sceneID="WYG-k1-VMm">
+            <objects>
+                <viewController id="Dgm-EP-B5A" customClass="QuestoesViewController" customModule="quizNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N6Y-G4-4zF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-WL-GNo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udt-O5-jMR" userLabel="retangulo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Gsk-e8-VNH">
+                                        <rect key="frame" x="-0.5" y="0.0" width="320" height="179"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual a cidade?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi3-DQ-UYD">
+                                        <rect key="frame" x="76.5" y="214" width="167.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RC4-CB-hru">
+                                        <rect key="frame" x="8" y="264" width="304" height="198"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWH-E7-AKU" customClass="BotaoComBorda" customModule="quizNight" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="42"/>
+                                                <color key="backgroundColor" red="0.13572123650000001" green="0.23052984479999999" blue="0.27878412600000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="rRe-Sn-9ta"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="JOGAR">
+                                                    <color key="titleColor" red="0.95402973209999997" green="0.96347557110000004" blue="0.96347557110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="rRe-Sn-9ta"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="rRe-Sn-9ta"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPY-Mi-zBd" customClass="BotaoComBorda" customModule="quizNight" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="52" width="304" height="42"/>
+                                                <color key="backgroundColor" red="0.13572123650000001" green="0.23052984479999999" blue="0.27878412600000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Pzc-nn-DLY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="JOGAR">
+                                                    <color key="titleColor" red="0.95402973209999997" green="0.96347557110000004" blue="0.96347557110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Pzc-nn-DLY"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="Pzc-nn-DLY"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teU-ur-DzZ" customClass="BotaoComBorda" customModule="quizNight" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="104" width="304" height="42"/>
+                                                <color key="backgroundColor" red="0.13572123650000001" green="0.23052984479999999" blue="0.27878412600000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="696-KC-6Xo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="JOGAR">
+                                                    <color key="titleColor" red="0.95402973209999997" green="0.96347557110000004" blue="0.96347557110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="696-KC-6Xo"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="696-KC-6Xo"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMd-Rn-373" customClass="BotaoComBorda" customModule="quizNight" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="156" width="304" height="42"/>
+                                                <color key="backgroundColor" red="0.13572123650000001" green="0.23052984479999999" blue="0.27878412600000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="O9a-uy-Snl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="JOGAR">
+                                                    <color key="titleColor" red="0.95402973209999997" green="0.96347557110000004" blue="0.96347557110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="O9a-uy-Snl"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="O9a-uy-Snl"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Gsk-e8-VNH" firstAttribute="top" secondItem="udt-O5-jMR" secondAttribute="top" id="2ur-Oe-abc"/>
+                                    <constraint firstItem="RC4-CB-hru" firstAttribute="leading" secondItem="udt-O5-jMR" secondAttribute="leadingMargin" id="COT-MI-oNg"/>
+                                    <constraint firstItem="RC4-CB-hru" firstAttribute="top" secondItem="vi3-DQ-UYD" secondAttribute="bottom" constant="20" id="Jcv-fe-GMa"/>
+                                    <constraint firstItem="vi3-DQ-UYD" firstAttribute="centerX" secondItem="udt-O5-jMR" secondAttribute="centerX" id="O2X-Wg-tXi"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="RC4-CB-hru" secondAttribute="trailing" id="T85-h2-Z3K"/>
+                                    <constraint firstItem="Gsk-e8-VNH" firstAttribute="centerX" secondItem="udt-O5-jMR" secondAttribute="centerX" id="TEf-5Y-GfE"/>
+                                    <constraint firstItem="vi3-DQ-UYD" firstAttribute="top" secondItem="Gsk-e8-VNH" secondAttribute="bottom" constant="35" id="XbT-os-RbC"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="RC4-CB-hru" secondAttribute="bottom" constant="10" id="XpY-kT-zuO"/>
+                                    <constraint firstItem="Gsk-e8-VNH" firstAttribute="width" secondItem="udt-O5-jMR" secondAttribute="width" id="kIf-Uy-hkR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kTa-WL-GNo" firstAttribute="centerY" secondItem="N6Y-G4-4zF" secondAttribute="centerY" id="FDr-UD-6Fz"/>
+                            <constraint firstItem="udt-O5-jMR" firstAttribute="centerY" secondItem="kTa-WL-GNo" secondAttribute="centerY" id="S81-LE-GaO"/>
+                            <constraint firstItem="udt-O5-jMR" firstAttribute="centerX" secondItem="kTa-WL-GNo" secondAttribute="centerX" id="aic-PV-xph"/>
+                            <constraint firstItem="kTa-WL-GNo" firstAttribute="centerX" secondItem="N6Y-G4-4zF" secondAttribute="centerX" id="bQ4-vk-iuz"/>
+                            <constraint firstItem="kTa-WL-GNo" firstAttribute="height" secondItem="N6Y-G4-4zF" secondAttribute="height" id="csm-5M-aMn"/>
+                            <constraint firstItem="kTa-WL-GNo" firstAttribute="width" secondItem="N6Y-G4-4zF" secondAttribute="width" id="nsO-hm-RU3"/>
+                            <constraint firstItem="udt-O5-jMR" firstAttribute="width" secondItem="kTa-WL-GNo" secondAttribute="width" id="v06-AX-SpN"/>
+                            <constraint firstItem="udt-O5-jMR" firstAttribute="height" secondItem="kTa-WL-GNo" secondAttribute="height" id="xlc-sz-M4w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CEq-aw-MeS"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgDica" destination="Gsk-e8-VNH" id="IQ5-8q-rNX"/>
+                        <outlet property="stackBotoes" destination="RC4-CB-hru" id="QZk-dg-rsV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kxn-R1-qiT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="131"/>
         </scene>
     </scenes>
     <resources>
