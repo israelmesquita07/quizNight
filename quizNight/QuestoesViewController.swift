@@ -12,6 +12,7 @@ class QuestoesViewController: UIViewController {
 
     @IBOutlet weak var imgDica: UIImageView!
     @IBOutlet weak var stackBotoes: UIStackView!
+    var pontuacao:Int = 0
     
     var cidades:[String] = ["Curitiba", "Toronto", "New York", "Washington"]
     var opcoes: [String] = ["São Paulo","Vancouver","Paris"]
@@ -26,10 +27,11 @@ class QuestoesViewController: UIViewController {
     func carregarQuestao() {
         
         if cidades.count == 0 {
+            performSegue(withIdentifier: "fimDeJogo", sender: self)
             return
         }
         
-        let i = Int(arc4random_uniform(UInt32(cidades.count)))
+        let i = aleatorio(tamanho: cidades.count)
         let cidade = cidades[i]
         cidades.remove(at: i)
         
@@ -47,7 +49,7 @@ class QuestoesViewController: UIViewController {
         
         if opcaoCerta >= 4 {
             //Colocar a opção certa entra as 4 primeiras
-            let novaOpcao = Int(arc4random_uniform(UInt32(4)))
+            let novaOpcao = aleatorio(tamanho: 4)
             minhasOpcoes.swapAt(opcaoCerta, novaOpcao)
             opcaoCerta = novaOpcao
         }
@@ -70,9 +72,9 @@ class QuestoesViewController: UIViewController {
         var vetorEmbaralhado = vetor
         
         //embaralhar vetor
-        for i in 0..<vetorEmbaralhado.count - 1 {
-            let j = Int(arc4random_uniform(UInt32(vetor.endIndex - 1))) + i
-            if  i != j {
+        for i in 0..<vetor.count - 1 {
+            let j = aleatorio(tamanho: vetor.endIndex - 1) + i
+            if  i != j && j < vetor.count {
                 //Troca os elementos
                 vetorEmbaralhado.swapAt(i, j)
             }
@@ -81,7 +83,40 @@ class QuestoesViewController: UIViewController {
         return vetorEmbaralhado
     }
     
-
+    @IBAction func btn1Click(_ sender: UIButton) {
+        botao(0)
+    }
+    @IBAction func btn2Click(_ sender: UIButton) {
+        botao(1)
+    }
+    @IBAction func btn3Click(_ sender: UIButton) {
+        botao(2)
+    }
+    @IBAction func btn4Click(_ sender: UIButton) {
+        botao(3)
+    }
+    
+    func botao(_ num:Int) {
+        if num == opcaoCerta {
+            pontuacao += 1
+        }else {
+            performSegue(withIdentifier: "fimDeJogo", sender: self)
+        }
+        carregarQuestao()
+    }
+    
+    //Retorna um numero aleatório a partir de um tamanho informado
+    func aleatorio(tamanho: Int) -> Int {
+        let sorteio = Int(arc4random_uniform(UInt32(tamanho)))
+        return sorteio
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destino = segue.destination as? GameOverViewController {
+            destino.pontuacao = self.pontuacao
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

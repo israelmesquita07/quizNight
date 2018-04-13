@@ -1,29 +1,27 @@
 //
-//  ViewController.swift
+//  GameOverViewController.swift
 //  quizNight
 //
-//  Created by Israel3D on 11/04/2018.
+//  Created by Israel3D on 12/04/2018.
 //  Copyright © 2018 Israel3D. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameOverViewController: UIViewController {
 
-    @IBOutlet weak var imgQNlogo: UIImageView!
+    @IBOutlet weak var pontos: UILabel!
+    var pontuacao:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    @IBAction func retornaHome(segue: UIStoryboardSegue) {
-    
+        pontos.text = String(pontuacao)
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 
 }
-
